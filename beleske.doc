@@ -1,0 +1,7 @@
+- for lintering React add babel-parser 
+    npm install --save-dev babel-parser
+    //.eslint.js
+    {
+      "parser": "babel-parser",
+      ...
+    }
