@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 import PropTypes from 'prop-types'
 
 /* eslint-disable arrow-body-style */
-const Button = ({ onPress }) => {
+const Button = ({ onPress, children = {} }) => {
   const { buttonStyle, textStyle } = styles
 
   return (
@@ -11,7 +11,7 @@ const Button = ({ onPress }) => {
       style={buttonStyle}
       onPress={onPress}
     >
-      <Text style={textStyle}>Click Me</Text>
+      <Text style={textStyle}>{children}</Text>
     </TouchableOpacity>
   )
 }
@@ -38,7 +38,12 @@ const styles = StyleSheet.create({
 })
 
 Button.propTypes = {
+  children: PropTypes.string,
   onPress: PropTypes.func.isRequired,
+}
+
+Button.defaultProps = {
+  children: 'Buy Now',
 }
 
 export default Button

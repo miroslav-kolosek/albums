@@ -29,6 +29,8 @@ const AlbumDetail = ({ album }) => {
     imageStyle,
   } = styles
 
+  const buttonText = `Buy ${title}`
+
   return (
     <Card>
       <CardSection>
@@ -50,7 +52,9 @@ const AlbumDetail = ({ album }) => {
         />
       </CardSection>
       <CardSection>
-        <Button onPress={() => Linking.openURL(url)} />
+        <Button onPress={() => Linking.openURL(url)}>
+          {buttonText}
+        </Button>
       </CardSection>
     </Card>
   )
