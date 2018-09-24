@@ -1,12 +1,16 @@
 import React from 'react'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
+import PropTypes from 'prop-types'
 
 /* eslint-disable arrow-body-style */
-const Button = () => {
+const Button = ({ onPress }) => {
   const { buttonStyle, textStyle } = styles
 
   return (
-    <TouchableOpacity style={buttonStyle}>
+    <TouchableOpacity
+      style={buttonStyle}
+      onPress={onPress}
+    >
       <Text style={textStyle}>Click Me</Text>
     </TouchableOpacity>
   )
@@ -32,5 +36,9 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
 })
+
+Button.propTypes = {
+  onPress: PropTypes.func.isRequired,
+}
 
 export default Button
