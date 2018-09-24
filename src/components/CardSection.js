@@ -1,14 +1,8 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 
-/* eslint-disable arrow-body-style, react/destructuring-assignment, react/prop-types */
-const CardSection = (props) => {
-  return (
-    <View style={styles.container}>
-      {props.children}
-    </View>
-  )
-}
+/* eslint-disable react/destructuring-assignment, react/prop-types */
+const CardSection = props => <View style={styles.container}>{ props.children }</View>
 
 const styles = StyleSheet.create({
   container: {
